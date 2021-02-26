@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .look{
+        min-width: 1001px;
+    }
+    .container{
+        width:100%;
+        overflow-x: hidden;
+    }
+    .div1{
+        width: 100%;
+        height: 1125px;
+        background: url("https://game.gtimg.cn/images/wuxia/act/a20180505img/super0710.jpg") center center;
+        margin: 0;
+        padding: 0;
+    }
+    .div1>:first-child{
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        height: 590px;
+    }
+    /* .link-freshman{
+
+        background-color: red;
+        height: 100px;
+        width: 300px;
+     position: relative;   
+    }
+    .link-freshman:hover::after{
+        content:'';
+        height: 4px;
+        width: 100%;
+        background-color: yellow;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left:0;
+    } */
+    
+    .span{
+        display: block;
+        width: 110px;
+        height: 110px;
+        background-color: red;
+        position: absolute;
+        left: 376px;
+        top: 240px;
+        border-radius: 50%;
+        opacity: 0;
+    }
+    .btn1{
+        display: block;
+        width: 242px;
+        height: 72px;
+        background-color: red;
+        position: relative;
+        left: 327px;
+        top: 390px;
+        opacity: 0;
+    }
+    .btn2{
+        display: block;
+        width: 242px;
+        height: 72px;
+        background-color: red;
+        position: relative;
+        left: 327px;
+        top: 402px;
+        opacity: 0;
+    }
+   
+    .event-box{
+        width: 1000px;
+        height: 280px;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-top: 464px; 
+    }
+    .event-box a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .event1{
+        margin: 0 31px 0 0;
+        float: left;
+        width: 312px;
+        height: 280px;
+        background-image: url("https://game.gtimg.cn/images/wuxia/a20190906index/b20160929-1.jpg");
+    }
+    .event2{
+        margin: 0 31px 0 0;
+        width: 312px;
+        height: 280px;
+        float: left;
+        background-image: url(https://game.gtimg.cn/images/wuxia/a20190906index/b20160929-2.jpg);
+    }
+    .event3{
+        position: relative;
+        margin: 0;
+        width: 312px;
+        height: 280px;
+        float: left;
+       
+    }
+    .event3 ul{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        transition:left .2s ease 0s;
+    }
+    
+    .lis{
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      
+        
+    }
+    .lis.cur{
+        z-index: 10;
+    }
+    .numbox{
+        position: absolute;
+        right: 2%;
+        bottom: 6%;
+        margin-left: 0;
+        font-size: 0;
+        line-height: 0;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        height: 14px;
+        z-index: 11;
+        width: 99px;
+    }
+    .poi{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+        margin: 0 3px;
+        background-color: #9b9b9b;
+        overflow: hidden;
+        -webkit-transition: width .3s ease 0s;
+        transition: width .3s ease 0s;
+        
+    }
+    .poi.cur{
+        width: 25px;
+        background-color: #2fc3a3;
+        
+    }
+    .gift-box{
+        display: block;
+        width: 1000px;
+        height: 105px;
+        margin: 0 auto;
+        margin-top: 30px;
+       
+    }
+    .gift-lsp{
+        position: relative;
+        width: 233px;
+        height: 105px;
+        float: left;
+        background-color: #1c1c1c;
+        margin-right: 22px;
+    }/*第一个页面下的4个盒子的class*/
+    .js4{
+        margin: 0;
+    }
+    .gift-lsp:hover::after{
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: yellow;
+        display: block;
+        position: absolute;
+        bottom: 0;
+    }
+    .gift{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }/*4个盒子里面链接的class*/
+    .ys{
+        display: block;
+        padding:15px 25px 0;
+        margin: 0;
+    }/*4个盒子里面p标签的class*/
+    .sp{
+        display: block;
+        font-size: 22px;
+        color: #cfae69;
+        font-weight: bold;
+        line-height: 136%;
+    }/*p标签里面的span元素的class*/
+    .em{
+        display: block;
+        font-size: 13px;
+        color: #aaa;
+        line-height: 115%;
+        font-style: normal;
+    }/*p标签里面的em元素的class*/
+    .gift-box .sc{
+        top: 65px;
+        left: 25px;
+        width: 17px;
+        height: 17px;
+        background-position: 100% -257px;
+    }/*第一个图标的节点*/
+    .gift-box .bc{
+        top: 32px;
+        left: 159px;
+        width: 41px;
+        height: 40px;
+        background-position: 0 -345px;
+       
+    }/*第二个图标的节点*/
+    .js2 .bc{
+        background-position: -256px -345px;
+    }
+    .js3 .bc{
+        background-position: -511px -345px;
+    }
+    .js4 .bc{
+        background-position: -767px -345px;
+    }/*四个盒子里面雪碧图，图标的坐标*/
+    .spr-h{
+        background-image: url(https://game.gtimg.cn/images/wuxia/act/a20161026ydy/spr-h.png);
+        background-repeat: no-repeat;
+    }/*雪碧图*/
+
+    .div2{
+        display: block;
+        width: 100%;
+        height: 514px;
+        padding-top: 1px;
+        box-sizing: border-box;
+        background:url("https://game.gtimg.cn/images/wuxia/act/a20160419ydy/bg2-20160419.jpg" ) center;
+    }
+
+    .content{
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+        overflow: hidden;
+        height: 464px;
+        padding: 50px 0 0;
+       
+    }
+    .eng{
+        color: #dfe5e4;
+        display: block;
+        font-size: 20px;
+        font-weight: normal;
+        font-family: tahoma, Helvetica,arial,sans-serif;
+        line-height: 100%;
+    }
+    .spc-color{
+        color: #2fc3a3;
+        font-size: 40px;
+        line-height: 110%;
+    }
+    .content>h2{
+        margin: 0 0 50px;
+        font-size: 40px;
+        line-height: 110%;
+    }
+    .reclist{
+        width: 100%;
+        background: url(https://ossweb-img.qq.com/images/wuxia/web201603/dragon.jpg) no-repeat 50% 0;
+        overflow: hidden;
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .rls{
+        position: relative;
+        float: left;
+        text-align: center;
+        width: 200px;
+        height: 291px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    
+    }
+    .reclist .gbg{
+        display: block;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        z-index: 1;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+        transition: all .3s ease-out 0s;
+        background:#3ed2b2 url(https://game.gtimg.cn/images/wuxia/act/a20160419ydy/gmk.png) no-repeat 50% 50%;
+    }
+   
+    .rls:hover .gbg{
+        width: 400px;
+        height: 400px;
+        opacity: 1;
+    }
+    .rls:hover .view{
+        background:black;
+    }
+    .reclist .bc{
+        top: 65px;
+        left: 50%;
+        width: 54px;
+        height: 54px;
+        margin: 0 0 0 -27px;
+        z-index: 2;
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160626ydy/numberspr.png);
+    }
+
+    /*雪碧图位置与列表对应*/
+    .reclist .ft2 .bc{
+        background-position: -54px 0;
+    }
+    .reclist .ft3 .bc{
+        background-position: -108px 0;
+
+    }
+    .reclist .ft4 .bc{
+        background-position: -162px 0;
+
+    }
+    .reclist .ft5 .bc{
+        background-position: -214px 0;
+    }
+    .reclist h3{
+        width: 100%;
+        left: 0;
+        top: 130px;
+        color: #fff;
+        font-size: 22px;
+        line-height: 120%;
+        font-weight: bold;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+    }
+    .pa{
+        position: absolute;
+    }
+    .reclist .view{
+        left: 50%;
+        top: 200px;
+        width: 80px;
+        height: 25px;
+        line-height: 24px;
+        margin: 0 0 0 -40px;
+        background: #3ed2b2;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 12px;
+        z-index: 2;  
+    }
+    .reclist .rec-btn{
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    }
+    .div3{
+        display: block;
+        width: 100%;
+        height: 603px;
+       background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/bg-2.jpg);
+    }
+    .content-3{
+        display: block;
+        width: 1056px;
+        height: 553px;
+        margin: 0 auto;
+        text-align: left;
+        overflow: hidden;
+        padding: 50px 0 0 0;
+    }
+    .h3{
+        color: #fff;
+        font-size: 40px;
+        margin: 0 0 50px 0;
+    }
+    .h3>span{
+        color: #cfae69;
+    }
+    .carousel{
+        display: block;
+        width: 1200px;
+        height: 422px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+       
+    }
+    .unit{
+        width: 56px;
+        height: 350px;
+        z-index: 2;
+        float: left;
+        background: #25262b;
+        list-style: none;
+        position: relative;
+        transition: all .1s ease-in 0s;
+    }
+    .active .clg{
+        clear: both;
+        position: absolute;
+        top: 0;
+        width: 559px;
+        height: 350px;
+        display: block;
+        z-index: 1;
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/bg-uts.jpg);
+        -webkit-transition: left .1s ease-in 0s;
+        transition: left .1s ease-in 0s;
+    }
+    .clg{
+        display: none;
+    }
+
+    .active{
+        transition: .1s linear all;
+        width: 496px;
+       
+        /* background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/wudu.png); */
+    }
+    
+    .active .content-lg{
+        display: block  ;
+        width: 259px ;
+        height: 286.8px;
+        padding: 30px 270px 0 30px;
+        margin: 0;
+    }
+    .active .content-lg>h4{
+        font-size: 65px;
+        color: #cfae69;
+        font-weight: bold;
+        line-height: 130%;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+    }
+    
+   
+    .content-sm{
+        display: block;
+    }
+    
+    .tag{
+        background: url(https://game.gtimg.cn/images/wuxia/a20190906index/shaolin-icon.png)no-repeat;
+        display: block;
+        top: 45px;
+        left: 180px;
+        width: 38px;
+        height: 38px;
+        position: absolute
+    }
+    .sl{
+        background: url(https://game.gtimg.cn/images/wuxia/a20190906index/shaolin-icon.png)no-repeat;
+        display: block;
+        top: 45px;
+        left: 180px;
+        width: 38px;
+        height: 38px;
+        position: absolute
+    }
+    .yh{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: 0 -69px;
+    }
+    .sd{
+        
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -301px -27px;
+    }
+    .tb{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -258px -27px;
+    }
+    .sw{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -215px -27px;
+    }
+    .tm{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -172px -27px;
+    }
+    .gb{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -43px -27px;
+
+    }
+    .tx{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: 0 -27px;
+    }
+    .cl{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -42px -68px;
+    }
+    .zw{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -86px -27px;
+    }
+    .wd{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/spr-2.png);
+        background-position: -129px -27px;
+    }
+    .mp-tw{
+        position: relative;
+        font-size: 112%;
+        color: #2fc3a2;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+    }
+    .mp-yw{
+        position: relative;
+        font-size: 12px;
+        color: #b7b7b7;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+    }
+    .mp-level{
+        margin: 15px 0 0 0;
+        display: block;
+        width: 259px;
+        height: 46.2px;
+
+    }
+    .mp-level b{
+        display: block;
+        font-size: 107.1%;
+        margin: 0 0 3px 0;
+        color: #fff;
+        font-weight: normal;
+    }
+    .mp-level .has{
+        background-color: #ff8f17;
+        border-color: #e2821a;
+    }
+    .mp-level i{
+        display: inline-block;
+        margin: 0 8px 0 2px;
+        width: 10px;
+        height: 10px;
+        font-size: 0;
+        line-height: 0;
+        border: 1px solid #75797c;
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+    .more{
+        margin: 20px auto;
+        padding: 0;
+
+    }
+    .morer{
+        display: inline-block;
+        background: #cfae69;
+        font-size: 13px;
+        border-radius: 15px;
+        padding: 0 15px;
+        line-height: 28px;
+        color: #fff;
+        text-decoration: none;
+        outline: 28px;
+       
+    }.morer i{
+        font-style: normal;
+    }
+    .light{
+        
+        position: absolute;
+        bottom: 0;
+        right: 63px;
+        width: 408px;
+        height: 422px;
+        background-repeat: no-repeat;
+        background-position: 38px bottom;
+        z-index: 1;
+        margin: 0;
+        display: block;
+        
+    }
+    .shaolin{
+        background: url(https://game.gtimg.cn/images/wuxia/a20190906index/shaolin.png);
+    }
+    .yihua{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20150609ydy/yihua.png);
+    }
+    .shendao{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160701updata/shendao.png);
+    }
+    .taibai{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/taibai.png);
+    }
+    .shenwei{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/shenwei.png);
+    }
+    .tangmen{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/tangmen.png);
+    }
+    .gaibang{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/gaibang.png);
+    }
+    .tianxiang{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/tianxiang.png);
+    }
+    .conglong{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20180505img/index_conglong.png);
+    }
+    .zhenwu{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/zhenwu.png);
+    }
+    .wudu{
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/wudu.png);
+    }
+    .div4{
+        display: block;
+        width: 100%;
+        height: 650px;
+        background-image: url(https://game.gtimg.cn/images/wuxia/act/a20150609ydy/p-3.jpg);
+    }
+    .box1{
+       width: 1000px;
+       height: 600px;
+       padding: 50px 0 0 0;
+       margin: 0 auto;
+    }
+    .all{
+        width: 100%;
+        margin-left: 0;
+        padding: 40px 0 0 0;
+        overflow: hidden;
+    }
+    .all>div:hover{
+        opacity: 0.8;
+    }
+    .off, .gam{
+        display: block;
+        width: 495px;
+        height: 137px;
+        float: left;
+        background-image: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/spr-c.png);
+    }
+    .off{
+        background-position: 0 -278px;
+        margin: 0 10px 0 0;
+        background-color: #2fc3a3;
+    }
+    .gam{
+        background-position: 0 -278px;
+        margin: 0;
+        background-color: #cfae69;
+    }
+    .pic1{
+        display: inline-block;
+        width: 70px;
+        height: 60px;
+        padding: 8px;
+        vertical-align: middle;
+        z-index: 1;
+        font-size: 0;
+        line-height: 0;
+        background: no-repeat;
+        background-position: 4px 0;
+        background-image: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/spr-c.png);
+    }
+   .pic2{
+        display: inline-block;
+        width: 70px;
+        height: 60px;
+        padding: 8px;
+        vertical-align: middle;
+        z-index: 1;
+        font-size: 0;
+        line-height: 0;
+        background: no-repeat;
+        background-image: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/spr-c.png);
+        background-position: -97px 0;
+   }
+    .da{
+        display: block;
+        width: 100%;
+        color: #fff;
+        height: 100%;
+        font-weight: bold;
+        overflow: hidden;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 40px;
+        text-align: center;
+        line-height: 137px;/* 线高可以设置为文本容器的高度，使得文本居中*/
+        text-indent: 85px;/* 这个属性可以调节文本水平位置的方向，为0时是表示垂直居中*/
+    }
+    
+    .lo1{
+        width: 240px;
+        height: 90px;
+        background-color: #2c2c2c;
+        font-size: 22px;
+        margin: 15px 15px 0 0;
+        display: block;
+        float: left;
+    }
+    .lo2{
+        width: 240px;
+        height: 90px;
+        background-color: #2c2c2c;
+        font-size: 22px;
+        margin: 15px 10px 0 0;
+        display: block;
+        float: left;
+    }
+    .lo3{
+        width: 240px;
+        height: 90px;
+        background-color: #2c2c2c;
+        font-size: 22px;
+        margin: 15px 15px 0 0;
+        display: block;
+        float: left;
+    }
+    .lo4{
+        width: 240px;
+        height: 90px;
+        background-color: #2c2c2c;
+        font-size: 22px;
+        margin: 15px 0 0 0;
+        display: block;
+        float: left;
+    }
+    .xx{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 90px;
+        color: #cdcdcd;
+        text-decoration: none;
+        font-weight: bold;
+
+    }
+
+    .div5{
+        display: block;
+        width: 100%;
+        height: 204.8px;
+        background-color: purple;
+    }
+    .ts{
+        position: fixed;
+        top: 50%;
+        right: 30px;
+        height: 420px;
+        width: 130px;
+        margin-top: -183px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 10000;
+       
+    }
+    .ts-1{
+        width: 100%;
+        height: 31.6px;
+        background: #2fc3a3;
+        padding: 10px 0 8px;
+        line-height: 135%;
+        color: #fff;
+        
+    }
+    .app-tit{
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .app-ifo{
+        font-size: 12px;
+        font-weight: normal;
+        text-align: center;
+        font-style: normal;
+    }
+    
+    .ts-2{
+        width: 130px;
+        height: 130px;
+        background: url("https://game.gtimg.cn/images/wuxia/picture/wuxia-app-for-android.png");
+        background-size: 130px 130px;
+    }
+    
+    .ts-3>span{
+        display: block;
+        width: 100%;
+        height: 36px;
+    }
+    .ots{
+        position: relative;
+        width: 100%;
+        background-color: #2c2c2c;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        
+        line-height: 36px;
+    }
+    .ots>a{
+        color: #c2c2c2;
+        text-decoration: none;
+    }
+    .ent{
+        position: relative;
+        background-color: #2fc3a3;
+        text-indent: 30px;
+    }
+    .ent>a{
+        text-decoration: none;
+        color:#fff;
+    }
+    .pretag{
+        position: absolute;
+        display: block;
+        z-index: 1;
+        text-indent: -9999px;
+        overflow: hidden;
+        font-size: 0;
+        top: 5px;
+        left: 24px;
+        line-height: 0;
+        background: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/spr-c.png) no-repeat;
+        background-position: 0 -83px;
+        width: 24px;
+        height: 22px;
+    }
+    .dlg{
+        background-color: #cfae69;
+        text-indent: 30px;
+    }
+    .dlg>a{
+        color: #fff;
+        text-decoration: none;
+    }
+    .dlg .pretag{
+        background-position: -96px -83px;
+    }
+    .spr-c{
+        background-image: url(https://game.gtimg.cn/images/wuxia/act/a20160107ydy/spr-c.png);
+    }
+   .totop{
+        display: block;
+        width: 45px;
+        height: 45px;
+        margin: 5px auto 0 auto;
+        background-position: 0 -229px;
+        text-align: left;
+        text-indent: -9999px;
+   }
+   
+</style>
+<body class="look">
+    <div class='container'>
+
+    
+    <div class="div1">
+        <div>
+            <a class="span" href=""></a>
+            <a class="btn1" href=""></a>
+            <a class="btn2" href="https://wuxia.qq.com/main.shtml"></a>
+            <div class="event-box">
+                <div class="event1"><a  href=""></a></div>
+                <div class="event2"><a  href=""></a></div>
+                <div class="event3">
+                    <ul>
+                        <li class="lis cur" ><a href="https://wuxia.qq.com/cp/a20210203jnsx/index.html?e_code=507747"  ><img src="https://ossweb-img.qq.com/upload/adw/image/20210203/833a5e03710195fef4f8e11eec3a71bd.jpeg" alt="金牛送喜" ></a></li>
+                        <li class="lis" ><a href="https://act.daoju.qq.com/act/a20210119businies/index.html?e_code=507933"  ><img  src="https://ossweb-img.qq.com/upload/adw/image/20210203/cd06706c6b841ba36bd07e6ff8a77396.jpeg" alt="新春祈年" ></a></li>
+                        <li class="lis" ><a href="https://wuxia.qq.com/cp/a20210129tdxcdc/index.html?e_code=508006"  ><img  src="https://ossweb-img.qq.com/upload/adw/image/20210203/eaa19e0272c88e1c01af2d816006e7b3.jpeg" alt="商城上新双倍天赏" ></a></li>
+                        <li class="lis"><a href="https://mall.qq.com/wuxia/?e_code=508007"  ><img  src="https://ossweb-img.qq.com/upload/adw/image/20210203/ba9d8f1977743f6370a55183875af127.jpeg" alt="角色立牌" ></a></li>
+                    </ul>
+                    <div class="numbox">
+                        <span class="poi cur" data-index="0">金牛送喜</span>
+                        <span class="poi" data-index="1">新春祈年</span>
+                        <span class="poi" data-index="2">商城上新双倍天赏</span>
+                        <span class="poi" data-index="3">角色立牌</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gift-box">
+                <div class="gift-lsp js1">
+                    <p class="ys">
+                        <span class="sp">新手指南</span>
+                        <em class="em">玩转天涯不用愁</em>
+                        <i class="sc pa spr-h"></i>
+                        <i class="bc pa spr-h"></i>
+                    </p>
+                    <a class="gift" href="https://wuxia.qq.com/guide/"></a>
+                </div>
+                <div class="gift-lsp js2">
+                    <p class="ys">
+                        <span class="sp">游戏特色</span>
+                        <em class="em">天涯明月真江湖</em>
+                        <i class="sc pa spr-h"></i>
+                        <i class="bc pa spr-h"></i>
+                    </p>
+                    <a class="gift" href="https://wuxia.qq.com/gamedata/features/"></a>
+                </div>
+                <div class="gift-lsp js3">
+                    <p class="ys">
+                        <span class="sp">活动中心</span>
+                        <em class="em">礼包福利一网打尽</em>
+                        <i class="sc pa spr-h"></i>
+                        <i class="bc pa spr-h"></i>
+                    </p>
+                    <a class="gift" href="https://wuxia.qq.com/events.shtml"></a>
+                </div>
+                <div class="gift-lsp js4">
+                    <p class="ys">
+                        <span class="sp">设定站</span>
+                        <em class="em">你不知道的天刀</em>
+                        <i class="sc pa spr-h"></i>
+                        <i class="bc pa spr-h"></i>
+                    </p>
+                    <a class="gift" href="https://wuxia.qq.com/act/a20160423station/"></a>
+                </div>
+                
+            </div>
+        </div>    
+    </div>
+    
+    <div class="div2">
+       <div class="content">
+           <h2>
+               <i class="eng">RECOMMENDED</i>
+                全新内容
+               <span class="spc-color">精彩呈现</span>
+           </h2>
+           <ul class="reclist">
+               <li class="rls ft1"><span class="gbg pa"></span><i class="bc pa spr-1"></i>
+                <h3 class="pa">第十一门派
+                    <br>
+                    幽夜从龙
+                </h3>
+                <span class="view pa">查看详情</span>
+                <a class="pa rec-btn" href="https://wuxia.qq.com/cp/20201203yycl/index.html"></a>
+            </li>
+               <li class="rls ft2"><span class="gbg pa"></span><i class="bc pa spr-1"></i>
+                <h3 class="pa">震撼话本
+                    <br>
+                    血探幽夜城
+                </h3>
+                <span class="view pa">查看详情</span>
+                <a class="pa rec-btn" href="https://www.bilibili.com/video/BV1o541137EX"></a></li>
+               <li class="rls ft3"><span class="gbg pa"></span><i class="bc pa spr-1"></i>
+                <h3 class="pa">T10金装
+                    <br>
+                    全门派升级
+                </h3>
+                <span class="view pa">查看详情</span>
+                <a class="pa rec-btn" href="https://www.bilibili.com/video/BV1vt4y1Y7Sp"></a></li>
+               <li class="rls ft4"><span class="gbg pa"></span><i class="bc pa spr-1"></i>
+                <h3 class="pa">全新剧情
+                    <br>
+                    潜龙跃夜
+                </h3>
+                <span class="view pa">查看详情</span>
+                <a class="pa rec-btn" href="https://www.bilibili.com/video/BV1hi4y157cQ"></a></li>
+               <li class="rls ft5"><span class="gbg pa"></span><i class="bc pa spr-1"></i>
+                <h3 class="pa">天下俩分
+                    <br>
+                    双阵营开启
+                </h3>
+                <span class="view pa">查看详情</span>
+                <a class="pa rec-btn" href="https://wuxia.qq.com/cp/20201203yycl/index.html#tab4"></a></li>
+             
+            
+            </ul>
+    
+          
+       </div>
+    </div>
+    <div class="div3">
+        <div class="content-3">
+            <h3 class="h3"><i class="eng">RECOMMENDED</i>
+            八荒门派
+            <span class="spc-color">各有主张</span></h3>
+            <ul class="carousel">
+                <li class="unit active">
+                    
+
+                        <img alt="少林" src="https://game.gtimg.cn/images/wuxia/a20190906index/uts-10.jpg">
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>少林<em class="tag sl"></em></h4>
+                            <p class="mp-tw">莲华怒火震遐方，九天瑞霭护慈航</p>
+                            <p class="mp-yw">魔教第一次来犯中原时，少林以一己之力击退之；少林寂灭大师更与天魔教主花君侯立下约定：十年之内，不在踏入中原一步。是役，被称为“佛魔之战”。</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/shaolin.shtml">查看更多<i>+</i></a>
+                            </p>
+                           <i class="light shaolin"></i>
+                       </div>
+                    </div>
+                    
+                            
+                </li>
+                <li class="unit">
+                    
+                       <img alt="移花" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-9.jpg">   
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>移花<em class="tag yh"></em></h4>
+                            <p class="mp-tw">醉来忘却移花处，谁自临风吹玉笛</p>
+                            <p class="mp-yw">玉笛临风，醉心入梦，红尘移花归去，沧海踏歌而来。移花乃东海子桑氏开创之门派，中原移花亦出自东海一脉。千年之来遗世独立，是八荒之中最为出尘风雅，写意逍遥之门派...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/yihua.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light yihua"></i>
+                        </div>
+                    </div>
+                    
+                </li>
+                <li class="unit">
+                    
+                        <img alt="神刀" src="https://game.gtimg.cn/images/wuxia/act/a20160701updata/uts-8.jpg">
+                       
+                        <div class="clg">
+                            <div  class="content-lg">
+                                <h4>神刀<em class="tag sd"></em></h4>
+                                <p class="mp-tw">刀含煞气腾幽朔，潇飒寒芒泣鬼神</p>
+                                <p class="mp-yw">长刀掠世，雄鹰相随，勇者初心无惧，仁者自可无敌。神刀乃傅红雪叶开所在之门派，江湖中第一用刀之门派，亦是八荒中最为特立独行、潇洒率性之门派...</p>
+                                <p class="mp-level">
+                                    <b>操作难度</b>
+                                    <i class="has"></i>
+                                    <i class="has"></i>
+                                    <i class="has"></i>
+                                    <i class="has"></i>
+                                    <i class="nos"></i>
+                                </p>
+                                <p class="more">
+                                    <a class="morer" href="https://wuxia.qq.com/gamedata/league/shendao.shtml">查看更多<i>+</i></a>
+                                </p>
+                                <i class="light shendao"></i>
+                            </div>
+                        </div>
+                   </li>
+                <li class="unit">
+                    
+                       <img alt="太白" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-1.jpg">
+                            
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>太白<em class="tag tb"></em></h4>
+                            <p class="mp-tw">流星白羽光出匣，一剑无痕雪漫山</p>
+                            <p class="mp-yw">风无痕本是开封府司录司参军事，负责协助捕门之人，利用强大的分析能力来推理查案。在多年的查案之中，风无痕因偶然机会获取本被认为是医书的《破穴论》...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/taibai.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light taibai"></i>
+                        </div>
+                    </div>
+                   
+                   </li>
+                   
+                <li class="unit">
+                    
+                       <img alt="神威" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-2.jpg">
+                        
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>神威<em class="tag sw"></em></h4>
+                            <p class="mp-tw">神威倒卷翻空浪，一举冲霄气势雄</p>
+                            <p class="mp-yw">后周副都指挥使韩通于954年创立“神威营”，忠诚守护后周皇室安全。韩通之子韩微，曾几次劝说父亲除去后周重臣赵匡胤，但韩通却欣赏赵匡胤之人才气度...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/shenwei.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light shenwei"></i>
+                        </div>
+                    </div>
+                    
+                   </li>
+                    
+                <li class="unit">
+                    
+                        <img alt="唐门" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-3.jpg">
+                   
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>唐门<em class="tag tm"></em></h4>
+                            <p class="mp-tw">雾霭云从飞星落，半影相依扇中情</p>
+                            <p class="mp-yw">蜀中唐氏，自魏晋起便为世家。五代十国之时，唐门少主唐郢化名卢郢，游历江南，更是进士及第，成为南唐的文武双进士，天下闻名...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/tangmen.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light tangmen"></i>
+                        </div>
+                    </div>
+                    
+                    </li>
+                <li class="unit">
+                   <img alt="丐帮" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-7.jpg">
+                       
+                   
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>丐帮<em class="tag gb"></em></h4>
+                            <p class="mp-tw">醉来豪气不可收，嘘作长虹贯牛斗</p>
+                            <p class="mp-yw">丐帮最早的源流可追溯到春秋时期，但正式作为一个门派存在于江湖之中，则是从唐末开始。黄巢起义中，某金姓将领因不满义军暴虐残害百姓...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/gaibang.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light gaibang"></i>
+                        </div>
+                    </div>
+                    
+                 </li>
+                <li class="unit">
+                    
+                        <img alt="天香" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-5.jpg">
+                        
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>天香<em class="tag tx"></em></h4>
+                            <p class="mp-tw">竞夸天下双无绝，独立人间第一香</p>
+                            <p class="mp-yw">华佗当年被处死之前，将其一生所学著为《青囊书》一卷。数百年后，少年桑柴子偶得此书，修习医术，其第一个救下之人，便是官宦千金员外之女...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/tianxiang.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light tianxiang"></i>
+                        </div>
+                    </div>
+                    
+                   </li>
+                <li class="unit">
+                    
+                        <img alt="从龙" src="https://game.gtimg.cn/images/wuxia/act/a20180505img/narrow_conglong.jpg">
+                        
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>从龙<em class="tag cl"></em></h4>
+                            <p class="mp-tw">骇浪回天斩旧梦，幽城暗战夜从龙</p>
+                            <p class="mp-yw">从龙卫，乃上代百晓生裴无咎与好友后周世宗柴荣携手，以李唐传袭十二楼五城之“幽夜城”为班底创立的组织。其从天，只听一人调遣；从战，只为胜战而存；从夜，只在暗中活动。</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/conglong.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light conglong"></i>
+                        </div>
+                    </div>
+                    
+                    </li>
+                <li class="unit">
+                    
+                        <img alt="真武" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-6.jpg">
+                       
+                    
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>真武<em class="tag zw"></em></h4>
+                            <p class="mp-tw">灵妙潜通乘风起，太极玄虚若镜清</p>
+                            <p class="mp-yw">真武祖师张梦白本是书香门第出身，屡试不中时竟在襄州山中偶遇一似癫似疯之道人扶摇子。得其点化，张梦白以文入武，更习得驱影之术...</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="nos"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/zhenwu.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light zhenwu"></i>
+                        </div>
+                    </div>
+                   
+                   </li>
+                <li class="unit">
+                    
+                        <img alt="五毒" src="https://game.gtimg.cn/images/wuxia/act/a20160107ydy/uts-4.jpg">
+                        
+                   
+                    <div class="clg">
+                        <div  class="content-lg">
+                            <h4>五毒<em class="tag wd"></em></h4>
+                            <p class="mp-tw">动游碧落心无碍，静藏深渊迹绝踪</p>
+                            <p class="mp-yw">地处云滇的五毒与中原诸派均有所不同，其武学以狠、诡、毒、快为要诀，以诡秘凌厉的刀法配合神鬼莫测的身法，可谓是举手之间、取人性命；轻烟散尽、乃见五毒。</p>
+                            <p class="mp-level">
+                                <b>操作难度</b>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                                <i class="has"></i>
+                            </p>
+                            <p class="more">
+                                <a class="morer" href="https://wuxia.qq.com/gamedata/league/wudu.shtml">查看更多<i>+</i></a>
+                            </p>
+                            <i class="light wudu"></i>
+                        </div>
+                    </div>
+                    
+                   </li>
+            </ul>
+        </div>
+    </div>
+    <div class="div4">
+        <div class="box1">
+            <div class="all">
+            <div class="off"><a class="da ia" href="https://wuxia.qq.com/main.shtml"><i class="pic1"></i><span>进入官网</span></a></div>
+            <div class="gam"><a class="da ib" href="" ><i class="pic2"></i><span>游戏下载</span></a></div>
+            <div class="lo1"><a class="xx" href="https://wuxia.qq.com/guide/">新手指南</a></div>
+            <div class="lo2"><a class="xx" href="https://wuxia.qq.com/events.shtml">活动中心</a></div>
+            <div class="lo3"><a class="xx" href="https://wuxia.qq.com/gamedata/">世界背景</a></div>
+            <div class="lo4"><a class="xx" href="https://wuxia.qq.com/kz/">逍遥客栈</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="div5"></div>
+    </div>
+    <div class="ts">
+        <div class="ts-1">
+            <b class="app-tit">下载天刀官方助手</b><br>
+            <i class="app-ifo">领取50万修为</i>
+        </div>
+        <div class="ts-2"></div>
+        <div class="ts-3">
+           <span class="but ots blk"><a href="javascript:window.scrollTo(0,500);" class="ota">01&nbsp;精彩活动</a></span>
+           <span class="but ots blk bds"><a href="javascript:window.scrollTo(0,1166);" class="ota">02&nbsp;版本内容</a></span>
+           <span class="but ots blk"><a href="javascript:window.scrollTo(0,1680);" class="ota">03&nbsp;八荒门派</a></span>
+           <span class="but ots ent"><a href="">进入官网</a><sup class="spr-c pretag"></sup></span>
+           <span class="but ots dlg"><a href="">游戏下载</a><sup class="spr-c pretag"></sup></span>
+          <a class="totop spr-c" href="javascript:window.scrollTo(0,0);">Top</a>
+        </div>
+    </div>
+    <div class="link-freshman"></div>
+    <script>
+        window.onload = function(){
+            let target = document.querySelectorAll('.unit');  
+            for(let i = 0; i<target.length;i++){
+               //  let vDom = document.createElement('a')
+                target[i].onmouseenter = function(){
+                    
+                    for(let j = 0; j<target.length;j++){
+                        if(j !== i){
+                            removeClass(target[j],'active')
+                        }
+                        
+                    }
+                    addClass(target[i],'active')
+
+                }
+                target[i].onmouseleave = function(){
+                    
+                }
+            }
+        }
+       
+   
+        function hasClass(ele, cls) {
+            cls = cls || '';
+            if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+            return new RegExp(' ' + cls + ' ').test(' ' + ele.className + ' ');
+        }
+        
+        function addClass(ele, cls) {
+            if (!hasClass(ele, cls)) {
+                ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
+            }
+        }
+        
+        function removeClass(ele, cls) {
+            if (hasClass(ele, cls)) {
+                var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
+                while (newClass.indexOf(' ' + cls + ' ') >= 0) {
+                newClass = newClass.replace(' ' + cls + ' ', ' ');
+                }
+                ele.className = newClass.replace(/^\s+|\s+$/g, '');
+            }
+        }
+
+       let data = [   // 数据
+         
+       ] 
+
+       let target = document.querySelectorAll('.unit');   
+
+       for(let i in data){  // control
+            for(let i = 0; i<target.length;i++){
+               //  let vDom = document.createElement('a')
+                target[i].onmouseenter = function(){
+                    target[i].appendChild(template(data[i]))
+                }
+                target[i].onmouseleave = function(){
+                    target[i].removeChild(template(data[i]))
+                }
+            }
+            
+       }
+
+       var list = document.getElementsByClassName('lis');
+       var points = document.getElementsByClassName('poi');
+        var index=0;//表示第几张图片和圆点。
+        var clearCur= function(){//清除类名
+            for(var i=0;i<list.length;i++)
+            {
+                list[i].className = 'lis';
+                
+            } 
+            for(var i=0;i<points.length;i++){
+                points[i].className='poi';
+            }  
+            
+        }
+        var goIndex = function(){//改变类名
+            clearCur();
+            list[index].className='lis cur';
+            points[index].className='poi cur';
+        }
+        var goNext = function(){//前往下一张图片和圆点
+            if(index < 3){
+                index++;
+            } else{
+                index=0;
+            }
+            goIndex();
+        }
+        var goPre = function(){
+            if(index==0){
+                index = 4;
+            }else{
+                index--;
+            }
+            goIndex();
+        }
+        for(var i = 0; i < points.length; i++){
+            points[i].addEventListener('mouseenter',function(){
+                var pointIndex = this.getAttribute('data-index');//获取标签内容
+                index=pointIndex;
+                goIndex();
+            })
+        }
+           
+
+        setInterval(function(){
+            goNext();
+        },5000)
+
+       
+       
+   
+      
+   
+    </script>
+</body>
+</html>
